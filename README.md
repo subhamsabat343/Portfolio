@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Subham Sabat - Personal Portfolio
 
-## Getting Started
+A modern, animated personal portfolio website built with Next.js 16, TypeScript, Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+## 🚀 Features
 
+- **Modern Design**: Beautiful gradient-based UI with dark mode support
+- **Smooth Animations**: Powered by Framer Motion for engaging user experience
+- **Responsive Layout**: Fully responsive design that works on all devices
+- **Fast Performance**: Built with Next.js 16 for optimal performance
+- **SEO Optimized**: Proper metadata and semantic HTML
+
+## 📋 Sections
+
+1. **Hero Section**: Introduction with animated text and social links
+2. **About Section**: Personal information and statistics
+3. **Skills Section**: Showcase of technical skills and technologies
+4. **Projects Section**: Portfolio of GitHub projects
+5. **Contact Section**: Contact information and social media links
+
+## 🛠️ Technologies Used
+
+- Next.js 16
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Lucide React (Icons)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 20.9 or higher
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <your-repo-url>
+cd portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## 📦 Build for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The easiest way to deploy is using [Vercel](https://vercel.com):
 
-## Deploy on Vercel
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👤 Author
+
+**Subham Sabat**
+
+- Email: subhamsabat343@gmail.com
+- LinkedIn: [subham-sabat-3540a6211](https://www.linkedin.com/in/subham-sabat-3540a6211)
+- GitHub: [subhamsabat343](https://github.com/subhamsabat343)
+- LeetCode: [subhamsabat343](https://leetcode.com/u/subhamsabat343/)
+- Salesforce: [subhamsabatxrf9na85i0o7](https://www.salesforce.com/trailblazer/subhamsabatxrf9na85i0o7)
+
+---
+
+Made with ❤️ by Subham Sabat
