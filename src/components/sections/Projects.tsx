@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Globe } from "lucide-react";
 import { projects } from "@/data/projects";
 import SectionTitle from "@/components/ui/SectionTitle";
 
@@ -55,7 +55,7 @@ export default function Projects() {
                   whileHover={{ scale: 1.1, x: 2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <Github size={18} />
+                  <Globe size={18} />
                   <span className="text-sm">Code</span>
                 </motion.a>
                 <motion.a
