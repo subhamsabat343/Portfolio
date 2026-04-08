@@ -1,16 +1,16 @@
-import { Linkedin, Github, Code, Cloud } from "lucide-react";
+import { Link, Globe, Code, Cloud } from "lucide-react";
 import { SocialLink } from "@/types";
 
 export const socialLinks: SocialLink[] = [
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/subham-sabat-3540a6211",
-    icon: Linkedin,
+    icon: Link,
   },
   {
     name: "GitHub",
     href: "https://github.com/subhamsabat343",
-    icon: Github,
+    icon: Globe,
   },
   {
     name: "LeetCode",
