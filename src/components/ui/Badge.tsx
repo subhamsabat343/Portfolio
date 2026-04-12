@@ -1,4 +1,4 @@
-interface BadgeProps {
+﻿interface BadgeProps {
   children: React.ReactNode;
   variant?: "default" | "accent" | "outline";
   className?: string;

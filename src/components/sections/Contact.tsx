@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Send, ArrowUpRight } from "lucide-react";
-import { contactInfo, contactSocialLinks } from "@/data/contact";
+import { contactInfo, contactSocialLinks } from "@/constants/contact";
 import SectionTitle from "@/components/ui/SectionTitle";
 import GlassCard from "@/components/ui/GlassCard";
 import Button from "@/components/ui/Button";
@@ -38,7 +38,7 @@ export default function Contact() {
     "w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] outline-none transition-colors text-sm";
 
   return (
-    <section id="contact" className="section-padding">
+    <section id="contact" className="section-padding py-20 min-h-[80vh]">
       <div className="max-w-4xl mx-auto">
         <SectionTitle
           number="05."
@@ -48,7 +48,7 @@ export default function Contact() {
         />
 
         <div className="grid md:grid-cols-5 gap-8">
-          {/* Left â€” Info & Social */}
+          {/* Left - Info & Social */}
           <div className="md:col-span-2 space-y-4">
             {/* Contact info cards */}
             {contactInfo.map((info, index) => {
@@ -125,7 +125,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right â€” Contact Form */}
+          {/* Right - Contact Form */}
           <motion.div
             className="md:col-span-3"
             initial={{ opacity: 0, y: 30 }}

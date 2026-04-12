@@ -1,10 +1,10 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { ArrowDown, Send, FolderOpen } from "lucide-react";
 import Image from "next/image";
 import { containerVariants, itemVariants } from "@/lib/animations";
-import { socialLinks } from "@/data/social";
+import { socialLinks } from "@/constants/social";
 import SocialIcon from "@/components/ui/SocialIcon";
 import Button from "@/components/ui/Button";
 

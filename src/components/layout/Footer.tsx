@@ -1,25 +1,22 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
-import { socialLinks } from "@/data/social";
+import Link from "next/link";
+import { socialLinks } from "@/constants/social";
 import SocialIcon from "@/components/ui/SocialIcon";
 
 const footerNav = [
-  { name: "Home", href: "home" },
-  { name: "About", href: "about" },
-  { name: "Projects", href: "projects" },
-  { name: "Contact", href: "contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Projects", href: "/projects" },
+  { name: "Experience", href: "/experience" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Footer() {
-  const handleClick = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
-    <footer className="relative border-t border-[var(--color-border)]">
+    <footer className="relative border-t border-[var(--color-border)] bg-[var(--color-bg-primary)]">
       {/* Subtle top gradient */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent-muted)] to-transparent" />
 
@@ -28,27 +25,29 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-lg font-bold text-[var(--color-text-primary)] mb-3">
-              <span className="text-[var(--color-accent)]">S</span>ubham Sabat
+              <span className="text-[var(--color-accent)]">S</span>ubham
+              <span className="text-[var(--color-accent)] ml-1">S</span>abat
             </h3>
-            <p className="text-sm text-[var(--color-text-tertiary)] leading-relaxed">
+            <p className="text-sm text-[var(--color-text-tertiary)] leading-relaxed max-w-xs">
               Software Engineer crafting clean, performant digital experiences.
+              Specializing in scalable web and mobile applications.
             </p>
           </div>
 
           {/* Quick links */}
           <div>
-            <h4 className="text-sm font-semibold text-[var(--color-text-primary)] uppercase tracking-wider mb-3">
-              Quick Links
+            <h4 className="text-sm font-semibold text-[var(--color-text-primary)] uppercase tracking-wider mb-4">
+              Explore
             </h4>
             <ul className="space-y-2">
               {footerNav.map((item) => (
                 <li key={item.name}>
-                  <button
-                    onClick={() => handleClick(item.href)}
-                    className="text-sm text-[var(--color-text-tertiary)] hover:text-[var(--color-accent)] transition-colors cursor-pointer"
+                  <Link
+                    href={item.href}
+                    className="text-sm text-[var(--color-text-tertiary)] hover:text-[var(--color-accent)] transition-colors"
                   >
                     {item.name}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -56,7 +55,7 @@ export default function Footer() {
 
           {/* Socials */}
           <div>
-            <h4 className="text-sm font-semibold text-[var(--color-text-primary)] uppercase tracking-wider mb-3">
+            <h4 className="text-sm font-semibold text-[var(--color-text-primary)] uppercase tracking-wider mb-4">
               Connect
             </h4>
             <div className="flex gap-2">
@@ -81,11 +80,20 @@ export default function Footer() {
           viewport={{ once: true }}
           className="pt-8 border-t border-[var(--color-border)] text-center"
         >
-          <p className="text-xs text-[var(--color-text-tertiary)] flex items-center justify-center gap-1">
-            Â© {new Date().getFullYear()} Subham Sabat. Built with
-            <Heart size={12} className="text-[var(--color-accent)] inline" />
-            using Next.js
-          </p>
+          <div className="text-xs text-[var(--color-text-tertiary)] flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-4">
+            <span>
+              &copy; {new Date().getFullYear()} Subham Sabat. All rights
+              reserved.
+            </span>
+            <span className="hidden sm:inline-block text-[var(--color-border)]">
+              |
+            </span>
+            <span className="flex items-center gap-1">
+              Built with
+              <Heart size={12} className="text-[var(--color-accent)]" />
+              using Next.js
+            </span>
+          </div>
         </motion.div>
       </div>
     </footer>

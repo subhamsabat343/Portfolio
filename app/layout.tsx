@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
+import "@/styles/globals.css";
+import Navigation from "@/components/layout/Navigation";
+import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -24,9 +26,9 @@ export const metadata: Metadata = {
     "Web Developer",
     "Full Stack Developer",
     "React",
-    "Next.js",
+    "Next",
     "TypeScript",
-    "Node.js",
+    "Node",
     "Portfolio",
   ],
   authors: [{ name: "Subham Sabat" }],
@@ -61,11 +63,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark scroll-smooth">
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-[var(--color-bg-primary)] text-[var(--color-text-secondary)] min-h-screen`}
       >
-        {children}
+        <Navigation />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -13,21 +13,22 @@ export const skillCategories: SkillCategory[] = [
     title: "Frontend",
     icon: Palette,
     skills: [
-      "HTML5",
-      "CSS3",
+      "HTML",
+      "CSS",
       "Bootstrap",
       "Tailwind CSS",
       "JavaScript",
       "TypeScript",
       "React",
       "React Native",
-      "Next.js",
+      "Next",
+      "Angular"
     ],
   },
   {
     title: "Backend",
     icon: Server,
-    skills: ["Node.js", "Express", "NestJS", "Spring", "Spring Boot"],
+    skills: ["Node", "Express", "Nest", "Spring", "Spring Boot"],
   },
   {
     title: "Databases",
@@ -42,11 +43,11 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Tools",
     icon: Wrench,
-    skills: ["Git", "Linux", "Docker"],
+    skills: ["Git", "GitHub", "Linux", "Docker", "Nginx", "AWS", "Jira"],
   },
   {
     title: "Problem Solving",
     icon: Brain,
-    skills: ["Data Structures", "Algorithms", "System Design"],
+    skills: ["Data Structures and Algorithms", "System Design"],
   },
 ];

@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion";
 import { Briefcase } from "lucide-react";
-import { experiences } from "@/data/experience";
+import { experiences } from "@/constants/experience";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Badge from "@/components/ui/Badge";
 
 export default function Experience() {
   return (
-    <section id="experience" className="section-padding">
+    <section id="experience" className="section-padding py-20 min-h-[80vh]">
       <div className="max-w-4xl mx-auto">
         <SectionTitle
           number="04."

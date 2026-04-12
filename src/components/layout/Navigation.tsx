@@ -1,35 +1,25 @@
-"use client";
+﻿"use client";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useState, useCallback } from "react";
-import { useActiveSection, useScrolled } from "@/lib/hooks";
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useScrolled } from "@/lib/hooks";
 import { NavItem } from "@/types";
 
 const navItems: NavItem[] = [
-  { name: "Home", href: "home" },
-  { name: "About", href: "about" },
-  { name: "Skills", href: "skills" },
-  { name: "Projects", href: "projects" },
-  { name: "Experience", href: "experience" },
-  { name: "Contact", href: "contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Projects", href: "/projects" },
+  { name: "Experience", href: "/experience" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navigation() {
   const isScrolled = useScrolled(20);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const activeSection = useActiveSection(navItems.map((item) => item.href));
-
-  const handleNavClick = useCallback(
-    (href: string) => {
-      setIsMobileMenuOpen(false);
-      const el = document.getElementById(href);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    },
-    []
-  );
+  const pathname = usePathname();
 
   return (
     <motion.nav
@@ -45,37 +35,38 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.button
-            onClick={() => handleNavClick("home")}
-            className="text-lg font-bold text-[var(--color-text-primary)] tracking-tight cursor-pointer"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <span className="text-[var(--color-accent)]">S</span>ubham
-            <span className="text-[var(--color-text-tertiary)] font-normal ml-1">.</span>
-          </motion.button>
+          <Link href="/">
+            <motion.div
+              className="text-lg font-bold text-[var(--color-text-primary)] tracking-tight cursor-pointer"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <span className="text-[var(--color-accent)]">S</span>ubham
+              <span className="text-[var(--color-accent)] ml-1">S</span>abat
+            </motion.div>
+          </Link>
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
-              <button
+              <Link
                 key={item.name}
-                onClick={() => handleNavClick(item.href)}
-                className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
-                  activeSection === item.href
+                href={item.href}
+                className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+                  pathname === item.href
                     ? "text-[var(--color-accent)]"
                     : "text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)]"
                 }`}
               >
                 {item.name}
-                {activeSection === item.href && (
+                {pathname === item.href && (
                   <motion.div
-                    layoutId="activeSection"
+                    layoutId="activeTab"
                     className="absolute inset-0 bg-[var(--color-accent-glow)] rounded-lg -z-10"
                     transition={{ type: "spring", duration: 0.5, bounce: 0.15 }}
                   />
                 )}
-              </button>
+              </Link>
             ))}
           </div>
 
@@ -102,20 +93,24 @@ export default function Navigation() {
           >
             <div className="px-4 py-4 space-y-1">
               {navItems.map((item, index) => (
-                <motion.button
+                <Link
                   key={item.name}
-                  onClick={() => handleNavClick(item.href)}
-                  className={`block w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
-                    activeSection === item.href
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                    pathname === item.href
                       ? "text-[var(--color-accent)] bg-[var(--color-accent-glow)]"
                       : "text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-tertiary)]"
                   }`}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05, duration: 0.3 }}
                 >
-                  {item.name}
-                </motion.button>
+                  <motion.span
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05, duration: 0.3 }}
+                  >
+                    {item.name}
+                  </motion.span>
+                </Link>
               ))}
             </div>
           </motion.div>

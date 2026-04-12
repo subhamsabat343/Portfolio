@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Globe, FolderGit2 } from "lucide-react";
-import { projects } from "@/data/projects";
+import { projects } from "@/constants/projects";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Badge from "@/components/ui/Badge";
 
 export default function Projects() {
   return (
-    <section id="projects" className="section-padding">
+    <section id="projects" className="section-padding py-20 min-h-[85vh]">
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           number="03."
@@ -17,7 +17,7 @@ export default function Projects() {
           description="A selection of projects that showcase my problem-solving skills and technical range."
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
