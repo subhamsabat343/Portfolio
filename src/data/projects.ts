@@ -4,41 +4,45 @@ export const projects: Project[] = [
   {
     title: "Barber Shop Website",
     description:
-      "A modern and responsive website built with HTML, CSS, and JavaScript. Features clean design and smooth user interactions.",
-    tech: ["HTML", "CSS", "JavaScript"],
+      "A modern, fully responsive business website featuring clean design, smooth CSS animations, and an intuitive UI. Built with semantic HTML and modular CSS architecture.",
+    tech: ["HTML5", "CSS3", "JavaScript"],
     github: "https://github.com/subhamsabat343/Barber-Shop-Website",
     category: "Web Development",
   },
   {
     title: "Bank Management System",
     description:
-      "ATM machine simulation created using C programming language. Demonstrates system programming and data structures implementation.",
-    tech: ["C"],
-    github: "https://github.com/subhamsabat343/Bank-Management-System-using-C-language",
+      "A comprehensive ATM simulation system built in C, featuring account management, transaction processing, and data persistence. Demonstrates proficiency in system-level programming.",
+    tech: ["C", "Data Structures"],
+    github:
+      "https://github.com/subhamsabat343/Bank-Management-System-using-C-language",
     category: "System Programming",
   },
   {
     title: "Background Changer",
     description:
-      "Interactive background color changer built with vanilla JavaScript. Features smooth transitions and modern UI design.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/subhamsabat343/web-development-Background-Changer-",
+      "An interactive color palette generator with smooth gradient transitions, real-time preview, and modern UI design. Features dynamic color state management.",
+    tech: ["HTML5", "CSS3", "JavaScript"],
+    github:
+      "https://github.com/subhamsabat343/web-development-Background-Changer-",
     category: "Frontend",
   },
   {
     title: "Form Validator",
     description:
-      "Comprehensive form validation system with real-time feedback. Implements modern UI/UX practices and accessibility standards.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/subhamsabat343/web-development-Form-validator-",
+      "Enterprise-grade form validation system with real-time field validation, accessibility-first design, and comprehensive error messaging. Implements modern UX patterns.",
+    tech: ["HTML5", "CSS3", "JavaScript"],
+    github:
+      "https://github.com/subhamsabat343/web-development-Form-validator-",
     category: "Frontend",
   },
   {
     title: "Image Slider",
     description:
-      "Beautiful image slider with smooth transitions and navigation controls. Built for practice and understanding of DOM manipulation.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/subhamsabat343/Image-Slider-Web-developement-",
+      "A performant image carousel with touch/swipe support, keyboard navigation, and smooth CSS transitions. Built with vanilla JS for deep DOM manipulation understanding.",
+    tech: ["HTML5", "CSS3", "JavaScript"],
+    github:
+      "https://github.com/subhamsabat343/Image-Slider-Web-developement-",
     category: "Frontend",
   },
 ];

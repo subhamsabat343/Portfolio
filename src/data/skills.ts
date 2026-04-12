@@ -1,6 +1,6 @@
 import {
   Palette,
-  Settings,
+  Server,
   Database,
   Code2,
   Wrench,
@@ -10,7 +10,7 @@ import { SkillCategory } from "@/types";
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Frontend Development",
+    title: "Frontend",
     icon: Palette,
     skills: [
       "HTML5",
@@ -25,8 +25,8 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: "Backend Development",
-    icon: Settings,
+    title: "Backend",
+    icon: Server,
     skills: ["Node.js", "Express", "NestJS", "Spring", "Spring Boot"],
   },
   {
@@ -35,12 +35,12 @@ export const skillCategories: SkillCategory[] = [
     skills: ["MongoDB", "PostgreSQL", "MySQL", "Oracle"],
   },
   {
-    title: "Programming Languages",
+    title: "Languages",
     icon: Code2,
     skills: ["C", "C++", "Java", "Python"],
   },
   {
-    title: "Development Tools",
+    title: "Tools",
     icon: Wrench,
     skills: ["Git", "Linux", "Docker"],
   },
