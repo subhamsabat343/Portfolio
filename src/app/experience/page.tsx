@@ -1,4 +1,4 @@
-import Experience from "@/components/sections/Experience";
+﻿import Experience from "@/components/sections/Experience";
 
 export const metadata = {
   title: "Experience | Subham Sabat",
@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function ExperiencePage() {
   return (
-    <div className="pt-20">
+    <div className="pt-8">
       <Experience />
     </div>
   );

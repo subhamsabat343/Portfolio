@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { ArrowDown, Send, FolderOpen } from "lucide-react";
@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       {/* Ambient background glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -20,7 +20,7 @@ export default function Hero() {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500 opacity-[0.03] rounded-full blur-[120px]" />
       </div>
 
-      <div className="max-w-6xl mx-auto w-full relative z-10">
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -29,14 +29,6 @@ export default function Hero() {
         >
           {/* Text content */}
           <div className="flex-1 text-center lg:text-left space-y-8 max-w-2xl">
-            {/* Greeting badge */}
-            <motion.div variants={itemVariants}>
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium border border-[var(--color-border)] text-[var(--color-text-tertiary)] bg-[var(--color-bg-secondary)]">
-                <span className="w-2 h-2 rounded-full bg-[var(--color-accent)] animate-pulse" />
-                Available for opportunities
-              </span>
-            </motion.div>
-
             {/* Name */}
             <motion.div variants={itemVariants}>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight">

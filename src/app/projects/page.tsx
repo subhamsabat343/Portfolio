@@ -1,4 +1,4 @@
-import Projects from "@/components/sections/Projects";
+﻿import Projects from "@/components/sections/Projects";
 
 export const metadata = {
   title: "Projects | Subham Sabat",
@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="pt-20">
+    <div className="pt-8">
       <Projects />
     </div>
   );

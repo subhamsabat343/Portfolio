@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Send, ArrowUpRight } from "lucide-react";
@@ -38,10 +38,10 @@ export default function Contact() {
     "w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] outline-none transition-colors text-sm";
 
   return (
-    <section id="contact" className="section-padding py-20 min-h-[80vh]">
+    <section id="contact" className="section-padding py-16 min-h-[80vh]">
       <div className="max-w-4xl mx-auto">
         <SectionTitle
-          number="05."
+          
           subtitle="Contact"
           title="Get In Touch"
           description="I'm always open to new opportunities and interesting projects. Let's connect and build something great together."

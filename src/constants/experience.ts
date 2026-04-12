@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     role: "Software Engineer",
     company: "Illumify",
-    duration: "2024 — Present",
+    duration: "2024 September— Present",
     description:
       "Developing and maintaining scalable mobile and web applications, focusing on delivery of high-quality code and robust testing frameworks.",
     contributions: [

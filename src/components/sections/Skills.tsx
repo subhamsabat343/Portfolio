@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { skillCategories } from "@/constants/skills";
@@ -17,10 +17,10 @@ import GlassCard from "@/components/ui/GlassCard";
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-padding py-20">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="section-padding py-16">
+      <div className="max-w-7xl mx-auto">
         <SectionTitle
-          number="02."
+          
           subtitle="Skills"
           title="Technologies I Work With"
           description="My technical toolkit spans across the full stack, from crafting pixel-perfect interfaces to building robust server-side systems."

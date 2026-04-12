@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { ExternalLink, Globe, FolderGit2 } from "lucide-react";
@@ -8,10 +8,10 @@ import Badge from "@/components/ui/Badge";
 
 export default function Projects() {
   return (
-    <section id="projects" className="section-padding py-20 min-h-[85vh]">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="section-padding py-16 min-h-[85vh]">
+      <div className="max-w-7xl mx-auto">
         <SectionTitle
-          number="03."
+          
           subtitle="Work"
           title="Featured Projects"
           description="A selection of projects that showcase my problem-solving skills and technical range."

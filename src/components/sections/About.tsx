@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { stats } from "@/constants/about";
@@ -7,10 +7,10 @@ import { fadeInUp, fadeInLeft, fadeInRight } from "@/lib/animations";
 
 export default function About() {
   return (
-    <section id="about" className="section-padding py-20 min-h-[70vh]">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="section-padding py-16 min-h-[70vh]">
+      <div className="max-w-7xl mx-auto">
         <SectionTitle
-          number="01."
+          
           subtitle="About"
           title="Who I Am"
           description="A brief introduction to my background, my journey into software engineering, and what drives my passion for development."

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Briefcase } from "lucide-react";
@@ -8,10 +8,10 @@ import Badge from "@/components/ui/Badge";
 
 export default function Experience() {
   return (
-    <section id="experience" className="section-padding py-20 min-h-[80vh]">
+    <section id="experience" className="section-padding py-16 min-h-[80vh]">
       <div className="max-w-4xl mx-auto">
         <SectionTitle
-          number="04."
+          
           subtitle="Career"
           title="Work Experience"
           description="My professional journey building software products and growing as an engineer."
