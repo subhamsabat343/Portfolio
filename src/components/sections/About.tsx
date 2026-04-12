@@ -1,20 +1,23 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
-import { fadeInLeft, fadeInRight } from "@/lib/animations";
-import { stats } from "@/data/about";
+import { stats } from "@/constants/about";
 import SectionTitle from "@/components/ui/SectionTitle";
+import { fadeInUp, fadeInLeft, fadeInRight } from "@/lib/animations";
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900"
-    >
+    <section id="about" className="section-padding py-16 min-h-[70vh]">
       <div className="max-w-7xl mx-auto">
-        <SectionTitle title="About Me" />
+        <SectionTitle
+          
+          subtitle="About"
+          title="Who I Am"
+          description="A brief introduction to my background, my journey into software engineering, and what drives my passion for development."
+        />
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left - Bio */}
           <motion.div
             variants={fadeInLeft}
             initial="hidden"
@@ -22,58 +25,43 @@ export default function About() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              I&apos;m a passionate Web Developer and Software Developer based in
-              Berhampur, India. My journey in programming started with a
-              curiosity to build things, and it has evolved into a deep passion
-              for creating innovative solutions.
+            <p className="text-lg text-[var(--color-text-primary)] font-medium leading-relaxed">
+              I'm a <span className="text-[var(--color-accent)]">Software Engineer</span> based in Berhampur, India, with 2+ years of experience building web applications.
             </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              I specialize in full-stack development, working with modern
-              technologies to build scalable web applications. From frontend
-              frameworks like React and Next.js to backend technologies like
-              Node.js and Spring Boot, I enjoy working across the entire
-              development stack.
+            <p className="text-[var(--color-text-secondary)] leading-relaxed">
+              My journey started with a curiosity to build things and evolved into a deep passion for creating impactful digital solutions. I specialize in <span className="text-[var(--color-text-primary)] font-medium">full-stack development</span>, working with modern technologies like React, Next, Node, and React Native.
             </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              When I&apos;m not coding, I&apos;m solving algorithmic problems, contributing
-              to open-source projects, or learning new technologies. I believe in
-              continuous learning and staying updated with the latest industry
-              trends.
+            <p className="text-[var(--color-text-secondary)] leading-relaxed">
+              I enjoy architecting clean, scalable codebases and building experiences users love. When I'm not shipping code, I'm solving algorithmic problems on LeetCode, exploring new technologies, or contributing to the developer community.
             </p>
           </motion.div>
 
+          {/* Right - Stats grid */}
           <motion.div
             variants={fadeInRight}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-2 gap-6"
+            className="grid sm:grid-cols-2 gap-4"
           >
             {stats.map((stat, index) => {
               const IconComponent = stat.icon;
               return (
                 <motion.div
                   key={stat.label}
-                  className="p-6 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-600"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="glass p-6 rounded-2xl flex flex-col items-center text-center group hover:border-[var(--color-accent-muted)] transition-all duration-300"
+                  variants={fadeInUp}
+                  custom={index}
                 >
-                  <div className="mb-3">
-                    <IconComponent
-                      className="text-blue-600 dark:text-blue-400"
-                      size={32}
-                    />
+                  <div className="w-12 h-12 rounded-xl bg-[var(--color-accent-glow)] flex items-center justify-center mb-4 group-hover:bg-[var(--color-accent-muted)] transition-colors">
+                    <IconComponent className="text-[var(--color-accent)]" size={24} />
                   </div>
-                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">
+                  <h4 className="text-3xl font-bold text-[var(--color-text-primary)] mb-1">
                     {stat.value}
-                  </div>
-                  <div className="text-gray-600 dark:text-gray-400 font-medium">
+                  </h4>
+                  <p className="text-sm text-[var(--color-text-tertiary)] uppercase tracking-wider font-medium">
                     {stat.label}
-                  </div>
+                  </p>
                 </motion.div>
               );
             })}

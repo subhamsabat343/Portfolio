@@ -1,4 +1,4 @@
-import { Mail, MapPin,Link, Globe, Code, Cloud } from "lucide-react";
+import { Mail, MapPin, Link, Globe, Code, Cloud } from "lucide-react";
 import { ContactInfo, SocialLink } from "@/types";
 
 export const contactInfo: ContactInfo[] = [
@@ -7,14 +7,14 @@ export const contactInfo: ContactInfo[] = [
     label: "Email",
     value: "subhamsabat343@gmail.com",
     href: "mailto:subhamsabat343@gmail.com",
-    color: "from-blue-500 to-blue-600",
+    color: "from-teal-500 to-emerald-500",
   },
   {
     icon: MapPin,
     label: "Location",
     value: "Berhampur, India",
     href: null,
-    color: "from-purple-500 to-purple-600",
+    color: "from-violet-500 to-purple-500",
   },
 ];
 

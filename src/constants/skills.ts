@@ -1,6 +1,6 @@
 import {
   Palette,
-  Settings,
+  Server,
   Database,
   Code2,
   Wrench,
@@ -10,24 +10,25 @@ import { SkillCategory } from "@/types";
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Frontend Development",
+    title: "Frontend",
     icon: Palette,
     skills: [
-      "HTML5",
-      "CSS3",
+      "HTML",
+      "CSS",
       "Bootstrap",
       "Tailwind CSS",
       "JavaScript",
       "TypeScript",
       "React",
       "React Native",
-      "Next.js",
+      "Next",
+      "Angular"
     ],
   },
   {
-    title: "Backend Development",
-    icon: Settings,
-    skills: ["Node.js", "Express", "NestJS", "Spring", "Spring Boot"],
+    title: "Backend",
+    icon: Server,
+    skills: ["Node", "Express", "Nest", "Spring", "Spring Boot"],
   },
   {
     title: "Databases",
@@ -35,18 +36,18 @@ export const skillCategories: SkillCategory[] = [
     skills: ["MongoDB", "PostgreSQL", "MySQL", "Oracle"],
   },
   {
-    title: "Programming Languages",
+    title: "Languages",
     icon: Code2,
     skills: ["C", "C++", "Java", "Python"],
   },
   {
-    title: "Development Tools",
+    title: "Tools",
     icon: Wrench,
-    skills: ["Git", "Linux", "Docker"],
+    skills: ["Git", "GitHub", "Linux", "Docker", "Nginx", "AWS", "Jira"],
   },
   {
     title: "Problem Solving",
     icon: Brain,
-    skills: ["Data Structures", "Algorithms", "System Design"],
+    skills: ["Data Structures and Algorithms", "System Design"],
   },
 ];

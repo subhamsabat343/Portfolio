@@ -1,12 +1,14 @@
+import { LucideIcon } from "lucide-react";
+
 export interface Project {
   title: string;
   description: string;
   tech: string[];
   github: string;
+  live?: string;
+  image?: string;
   category: string;
 }
-
-import { LucideIcon } from "lucide-react";
 
 export interface SkillCategory {
   title: string;
@@ -32,4 +34,18 @@ export interface Stat {
   label: string;
   value: string;
   icon: LucideIcon;
+}
+
+export interface Experience {
+  role: string;
+  company: string;
+  duration: string;
+  description: string;
+  contributions: string[];
+  tech: string[];
+}
+
+export interface NavItem {
+  name: string;
+  href: string;
 }

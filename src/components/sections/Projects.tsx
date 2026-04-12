@@ -1,74 +1,96 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Globe } from "lucide-react";
-import { projects } from "@/data/projects";
+import { ExternalLink, Globe, FolderGit2 } from "lucide-react";
+import { projects } from "@/constants/projects";
 import SectionTitle from "@/components/ui/SectionTitle";
+import Badge from "@/components/ui/Badge";
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900"
-    >
+    <section id="projects" className="section-padding py-16 min-h-[85vh]">
       <div className="max-w-7xl mx-auto">
-        <SectionTitle title="My Projects" />
+        <SectionTitle
+          
+          subtitle="Work"
+          title="Featured Projects"
+          description="A selection of projects that showcase my problem-solving skills and technical range."
+        />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all overflow-hidden border border-gray-100 dark:border-gray-600 group"
-              initial={{ opacity: 0, y: 50 }}
+              className="glass rounded-2xl overflow-hidden group glow-hover flex flex-col"
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -8, scale: 1.02 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.08,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
             >
-              <div className="mb-4">
-                <span className="text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/50 px-3 py-1.5 rounded-full border border-blue-200 dark:border-blue-800">
-                  {project.category}
-                </span>
+              {/* Project image area / colored header */}
+              <div className="relative h-40 bg-gradient-to-br from-[var(--color-bg-tertiary)] to-[var(--color-bg-elevated)] flex items-center justify-center border-b border-[var(--color-border)] overflow-hidden">
+                <FolderGit2
+                  className="text-[var(--color-text-tertiary)] opacity-20 group-hover:opacity-30 transition-opacity"
+                  size={56}
+                />
+                {/* Category badge */}
+                <div className="absolute top-4 left-4">
+                  <Badge variant="accent">{project.category}</Badge>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-5">
-                {project.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-xs px-3 py-1.5 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg font-medium border border-gray-200 dark:border-gray-600"
+
+              {/* Content */}
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-lg font-bold text-[var(--color-text-primary)] mb-2 group-hover:text-[var(--color-accent)] transition-colors">
+                  {project.title}
+                </h3>
+
+                <p className="text-sm text-[var(--color-text-tertiary)] leading-relaxed mb-4 flex-1">
+                  {project.description}
+                </p>
+
+                {/* Tech stack */}
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-xs px-2.5 py-1 rounded-md bg-[var(--color-bg-tertiary)] text-[var(--color-text-tertiary)] font-medium border border-[var(--color-border)]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Action links */}
+                <div className="flex gap-4 pt-4 border-t border-[var(--color-border)]">
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-[var(--color-text-tertiary)] hover:text-[var(--color-accent)] transition-colors text-sm font-medium"
+                    whileHover={{ x: 2 }}
                   >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex gap-4 pt-4 border-t border-gray-200 dark:border-gray-600">
-                <motion.a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
-                  whileHover={{ scale: 1.1, x: 2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <Globe size={18} />
-                  <span className="text-sm">Code</span>
-                </motion.a>
-                <motion.a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
-                  whileHover={{ scale: 1.1, x: 2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <ExternalLink size={18} />
-                  <span className="text-sm">View</span>
-                </motion.a>
+                    <Globe size={16} />
+                    <span>Code</span>
+                  </motion.a>
+                  {project.live && (
+                    <motion.a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-[var(--color-text-tertiary)] hover:text-[var(--color-accent)] transition-colors text-sm font-medium"
+                      whileHover={{ x: 2 }}
+                    >
+                      <ExternalLink size={16} />
+                      <span>Live Demo</span>
+                    </motion.a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
