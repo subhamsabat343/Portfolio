@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
@@ -11,6 +11,7 @@ interface ButtonProps {
   className?: string;
   size?: "sm" | "md" | "lg";
   external?: boolean;
+  download?: string | boolean;
 }
 
 export default function Button({
@@ -21,6 +22,7 @@ export default function Button({
   className = "",
   size = "md",
   external = false,
+  download,
 }: ButtonProps) {
   const baseStyles =
     "inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all cursor-pointer";
@@ -43,6 +45,7 @@ export default function Button({
   const linkProps = href
     ? {
         href,
+        download,
         ...(external && {
           target: "_blank",
           rel: "noopener noreferrer",

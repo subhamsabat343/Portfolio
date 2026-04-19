@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Send, FolderOpen } from "lucide-react";
+import { ArrowDown, Send, FileText } from "lucide-react";
 import Image from "next/image";
 import { containerVariants, itemVariants } from "@/lib/animations";
 import { socialLinks } from "@/constants/social";
@@ -49,22 +49,28 @@ export default function Hero() {
             {/* Tagline */}
             <motion.div variants={itemVariants}>
               <p className="text-base sm:text-lg text-[var(--color-text-secondary)] leading-relaxed max-w-lg mx-auto lg:mx-0">
-                Building clean, scalable digital solutions with modern
-                technologies. Passionate about crafting user experiences that
-                make a difference.
+                I am a dedicated Software Engineer specializing in building
+                high-performance, scalable web and mobile applications. I focus
+                on transforming complex problems into elegant, user-centric
+                digital solutions.
               </p>
             </motion.div>
 
             {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Button variant="primary" href="#projects" size="lg">
-                <FolderOpen size={18} />
-                View Projects
+              <Button
+                variant="primary"
+                href="/Subham_CV_January_2026.pdf"
+                download="Subham_Sabat_Resume.pdf"
+                size="lg"
+              >
+                <FileText size={18} />
+                Download Resume
               </Button>
-              <Button variant="secondary" href="#contact" size="lg">
+              <Button variant="secondary" href="/contact" size="lg">
                 <Send size={18} />
                 Get In Touch
               </Button>

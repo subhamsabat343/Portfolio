@@ -1,4 +1,4 @@
-﻿import About from "@/components/sections/About";
+import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
 
 export const metadata = {
@@ -8,9 +8,9 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="pt-8">
+    <>
       <About />
       <Skills />
-    </div>
+    </>
   );
 }

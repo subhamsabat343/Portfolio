@@ -68,7 +68,7 @@ export default function RootLayout({
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-[var(--color-bg-primary)] text-[var(--color-text-secondary)] min-h-screen`}
       >
         <Navigation />
-        <main>{children}</main>
+        <main className="pt-16">{children}</main>
         <Footer />
       </body>
     </html>

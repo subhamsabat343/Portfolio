@@ -1,4 +1,4 @@
-﻿import Contact from "@/components/sections/Contact";
+import Contact from "@/components/sections/Contact";
 
 export const metadata = {
   title: "Contact | Subham Sabat",
@@ -7,8 +7,6 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="pt-8">
-      <Contact />
-    </div>
+    <Contact />
   );
 }
