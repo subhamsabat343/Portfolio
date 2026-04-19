@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
@@ -11,6 +11,8 @@ interface ButtonProps {
   className?: string;
   size?: "sm" | "md" | "lg";
   external?: boolean;
+  download?: string | boolean;
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -21,9 +23,11 @@ export default function Button({
   className = "",
   size = "md",
   external = false,
+  download,
+  disabled = false,
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all cursor-pointer";
+    "inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all";
 
   const sizeStyles = {
     sm: "px-4 py-2 text-sm",
@@ -37,12 +41,19 @@ export default function Button({
     ghost: "btn-ghost",
   };
 
-  const combinedClassName = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;
+  const combinedClassName = `
+    ${baseStyles} 
+    ${sizeStyles[size]} 
+    ${variantStyles[variant]} 
+    ${disabled ? "opacity-50 cursor-not-allowed pointer-events-none" : "cursor-pointer"} 
+    ${className}
+  `.trim();
 
-  const MotionTag = href ? motion.a : motion.button;
-  const linkProps = href
+  const MotionTag = href && !disabled ? motion.a : motion.button;
+  const linkProps = (href && !disabled)
     ? {
         href,
+        download,
         ...(external && {
           target: "_blank",
           rel: "noopener noreferrer",
@@ -53,10 +64,11 @@ export default function Button({
   return (
     <MotionTag
       className={combinedClassName}
-      onClick={onClick}
-      whileHover={{ scale: 1.03 }}
-      whileTap={{ scale: 0.97 }}
-      {...linkProps}
+      onClick={disabled ? undefined : onClick}
+      disabled={disabled}
+      whileHover={disabled ? {} : { scale: 1.03 }}
+      whileTap={disabled ? {} : { scale: 0.97 }}
+      {...(linkProps as any)}
     >
       {children}
     </MotionTag>
